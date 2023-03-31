@@ -56,14 +56,19 @@ const questions = [
         name: "Questions",
         message: "Whats your project Questions",
         type: https://github.com/rnutall
-        Email: <a>rnutall1@Gmail.com</a>
+        Email: <a email>rnutall1@Gmail.com</a>
 
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(ReadMe_server, data) {
-    fs.ReadStream.write(ReadMe_server)
+function writeToFile(ReadMe_server-tutorial, data) {
+    const fs = require('fs');
+    fs.readFile('data.csv', 'utf8', (error, data) =>
+  error ? console.error(error) : console.log(data)
+);
+    fs.writeFile('log.txt', process.argv[2], (err) =>
+   err ? console.error(err) : console.log('Success!'));
 }
 
 // TODO: Create a function to initialize app

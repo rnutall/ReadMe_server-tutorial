@@ -1,13 +1,14 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const markdownGenerate = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
-        name: "Title" ,
+        name: "Title",
         message: "ReadMe_server-tutorial",
-        type: "input",
+        type: "input"
     },
    
 {
@@ -37,13 +38,13 @@ const questions = [
     {
         name: "License",
         message: "Whats your project License?",
-        type: "input"
+        type: "mit"
 
     },
     {
         name: "Contributions",
         message: "Whats your project Contributions?",
-        type: "input"
+        type: "Rodney Nutall"
 
     },
     {
@@ -55,37 +56,56 @@ const questions = [
     {
         name: "Questions",
         message: "Whats your project Questions",
-        type: https://github.com/rnutall
-        Email: <a email>rnutall1@Gmail.com</a>
+        type: "type"
 
     }
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(ReadMe_server-tutorial, data) {
-    const fs = require('fs');
-    fs.readFile('data.csv', 'utf8', (error, data) =>
-  error ? console.error(error) : console.log(data)
-);
-    fs.writeFile('log.txt', process.argv[2], (err) =>
-   err ? console.error(err) : console.log('Success!'));
-}
+function writeToFile(ReadMe_server, data,) {}
+function writeToFile(ReadMe_server, data,) {
+ fs.writeFile('data.csv', 'utf8', (error, data) => {
+
+    if (err) {
+        console.log("File writing error", err);
+        }
+        else {
+            console.log("Successful file");
+        }
+    });
+}  
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-    .createPromptModule(questions)
+    .Prompt(questions)
     .then((answers) =>{
-        console.log(answers);
+       // console.log(answers) 
+       answers.badge = renderLicenseBadge(answers.license);
+       answers.link = renderLicenseLink(answers.license);
+       answers.info = renderLicenseSection(answers.license);
+
+       let ReadMe_server = markdownGenerate(answers);
+       console.log(ReadMe_server);
+
+       return ReadMe_server
     })
-    .catch((error) => {
-        if(error.isTryError){
-            console.log("prompt could not be rendered");
-            else{console.log("somthing went wrong.")
+    .then((ReadMe_server) =>{
+        writeToFile('./dist/readMe.md', ReadMe_server);
+})
+.catch((error) => {
+    if(err.isErr) {
+        console.log("Not rendering");
+    }
+        {
+            else {
+                console.log("What Happened?")
+            }
         };
-        }
-    });
-}
+    }
+)
+    
+
 
 // Function call to initialize app
-function init();
+function init();}

@@ -10,55 +10,46 @@ const questions = [
         message: "ReadMe_server-tutorial",
         type: "input"
     },
-   
-{
+   {
         name: "Desciription",
         message: "Whats your project discription?",
         type: "input"
-
-    },
+},
     {
         name: "Table of contents",
         message: "Whats your project Contents?",
         type: "input"
-
-    },
+},
     {
         name: "Installation",
         message: "Whats your project Installations?",
         type: "input"
-
-    },
+},
     {
         name: "Usage",
         message: "Whats your project Usages?",
         type: "input"
-
-    },
+},
     {
         name: "License",
         message: "Whats your project License?",
         type: "mit"
-
-    },
+},
     {
         name: "Contributions",
         message: "Whats your project Contributions?",
         type: "Rodney Nutall"
-
-    },
+},
     {
         name: "Tests",
         message: "Whats your project Tests?",
         type: "input"
-
-    },
+},
     {
         name: "Questions",
         message: "Whats your project Questions",
         type: "type"
-
-    }
+}
 ];
 
 // TODO: Create a function to write README file
@@ -97,15 +88,13 @@ function init() {
     if(err.isErr) {
         console.log("Not rendering");
     }
-        {
-            else {
+        
+            else; {
                 console.log("What Happened?")
             }
-        };
+        
     }
 )
     
-
-
-// Function call to initialize app
-function init();}
+//Function call to initialize app
+init();}

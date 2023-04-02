@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const markdownGenerate = require('./utils/generateMarkdown.js');
+const markdownGenerate = require('./generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -69,7 +69,7 @@ function writeToFile(ReadMe_server, data,) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-    .Prompt(questions)
+    .prompt(questions)
     .then((answers) =>{
        // console.log(answers) 
        answers.badge = renderLicenseBadge(answers.license);
@@ -95,6 +95,6 @@ function init() {
         
     }
 )
-    
+}   
 //Function call to initialize app
-init();}
+init();

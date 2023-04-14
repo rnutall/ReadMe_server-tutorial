@@ -68,33 +68,35 @@ function writeToFile(ReadMe_server, data,) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer
-    .prompt(questions)
-    .then((answers) =>{
+    inquirer.prompt(questions).then(inquirerResponses) =>
+     { console.log('Generating README...');
+      writeToFile('README.md', generateMarkdown({ ...inquirerResponses }))}; 
+}
+    //inquirer
+    //.prompt(questions)
+    //.then((answers) =>{
        // console.log(answers) 
-       answers.badge = renderLicenseBadge(answers.license);
-       answers.link = renderLicenseLink(answers.license);
-       answers.info = renderLicenseSection(answers.license);
+      // answers.badge = renderLicenseBadge(answers.license);
+       //answers.link = renderLicenseLink(answers.license);
+       //answers.info = renderLicenseSection(answers.license);
 
-       let ReadMe_server = markdownGenerate(answers);
-       console.log(ReadMe_server);
+       //let ReadMe_server = markdownGenerate(answers);
+       //console.log(ReadMe_server);
 
-       return ReadMe_server
-    })
-    .then((ReadMe_server) =>{
-        writeToFile('./dist/readMe.md', ReadMe_server);
-})
-.catch((error) => {
-    if(err.isErr) {
-        console.log("Not rendering");
-    }
+       //return ReadMe_server
+    //})
+    //.then((ReadMe_server) =>{
+        //writeToFile('./dist/readMe.md', ReadMe_server);
+//})
+//.catch((error) => {
+  //  if(err.isErr) {
+    //    console.log("Not rendering");
+    //}
         
-            else; {
-                console.log("What Happened?")
-            }
+      //      else; {
+        //        console.log("What Happened?")
+   // }
         
-    }
-)
-}   
-//Function call to initialize app
-init();
+    //}
+//)
+//};   
